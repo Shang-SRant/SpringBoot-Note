@@ -139,7 +139,6 @@ server:
 ## 6. springboot相关注解说明
 
 ```markdown
-
 # Spring boot通常有一个名为 xxxApplication的类,入口类中有一个main方法, 在main方法中使用SpringApplication.run(xxxApplication.class,args)启动springboot应用的项目。
 
 # @RestController: 就是@Controller+@ResponseBody组合，支持RESTful访问方 式，返回结果都是json字符串。
@@ -157,26 +156,25 @@ server:
 
 ```yml
 #说明:在实际开发过程中生产环境和测试环境有可能是不一样的 因此将生产中的配置和测试中的配置拆分开,是非常必要的在springboot中也提供了配置文件拆分的方式. 这里以生产中项名名称不一致为例:
-	
-	生产中项目名为: cmfz
+
+	生产中项目名为: aaaa
 	测试中项目名为: springboot
 	端口同时为:   8080
 
 拆分如下:
 	#主配置文件:
-			application.yml	#用来书写相同的的配置
-				server:
-					port: 8080 #生产和测试为同一个端口
+		application.yml	#用来书写相同的的配置
+			server:
+				port: 8080 #生产和测试为同一个端口
                    
-    #生产配置文件:
-    		application-pord.yml
-    			server:
-    				context-path: /cmfz
-    #测试配置文件:
-    		application-dev.yml
-    			server:
-    				context-path: /springboot
-
+	#生产配置文件:
+		application-pord.yml
+			server:
+				context-path: /aaaa
+	#测试配置文件:
+		application-dev.yml
+			server:
+				context-path: /springboot
 ```
 
 ---
@@ -1033,7 +1031,6 @@ public class FileController {
 ###### 	13.1.3 修改文件上传大小
 
 ```yml
-
 #上传时出现如下异常:  上传文件的大小超出默认配置  默认10M
 nested exception is java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.FileUploadBase$SizeLimitExceededException: the request was rejected because its size (38443713) exceeds the configured maximum (10485760)
 #修改上传文件大小:
